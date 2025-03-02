@@ -113,9 +113,12 @@ const disabledBtn = (taskId) => {
 
 // started challenge part here
 const realDate = document.getElementById("realDate");
+const WeekDay = document.getElementById("WeekDay");
 const localDate = () => {
   const date = new Date();
   const day = date.getDate();
+  const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const week = weekdays[date.getDay()];
   const months = [
     "January",
     "February",
@@ -133,6 +136,7 @@ const localDate = () => {
   const month = months[date.getMonth()];
   const year = date.getFullYear();
   const localDate = `${month} ${day} ${year}`;
+  WeekDay.innerHTML = week;
   realDate.innerHTML = localDate;
 };
 localDate();
